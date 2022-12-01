@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--  <script src="main.js"></script> -->
+    
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">Todo List Cheta</div>
+    <div id="sidebar">
+        <div id="home">
+            <p>Home</p>
+            <ul>
+                <button class="clicked">
+                    <!-- <img src="1.jpg" alt=""> -->
+                    All tasks
+                </button>
+
+                <button>
+                    <!-- <img src="2.jpg" alt=""> -->
+                    Today
+                </button>
+
+                <button>
+                    <!-- <img src="3.jpg" alt=""> -->
+                    Next 7 days
+                </button>
+
+                <button>
+                    <!-- <img src="4.jpg" alt=""> -->
+                    Important
+                </button>
+            </ul>
+        </div>
+        <div id="projects">
+            <p>Projects</p>
+            <ul>
+                <button>Todos</button>
+                <button>
+                    <!-- <img src="a.jpg" alt=""> -->
+                    Add Project
+                </button>
+            </ul>
+        </div>
+    </div>
+    <div id="content">
+
+    </div>
+    <div id="footer">
+        Copyright Andre Espinoza
+    </div>
+
+    <script defer>
+        
+        
+        const buttons = document.querySelectorAll("button");
+        console.log(buttons);
+
+        buttons.forEach(button => {
+        button.addEventListener('mouseover',  ()=> {
+            console.log(button.className);
+            if(button.className !=="clicked"){
+            button.setAttribute('class', 'hovered');
+            }
+        });
+
+        button.addEventListener('mouseout',  ()=> {
+            
+            if(button.className !=="clicked"){
+            button.removeAttribute('class');}
+
+        });
+
+        button.addEventListener('click',  ()=> {
+            
+            let previuslyClicked = document.querySelector(".clicked");
+            
+            if (previuslyClicked==null){}else{
+                previuslyClicked.removeAttribute('class');
+            }
+            
+            button.setAttribute('class', 'clicked');
+            
+            
+        });
+
+
+        });
+
+        /* function selectHomeItem(){
+
+        } */
+
+
+
+
+    </script>
+</body>
+</html>
