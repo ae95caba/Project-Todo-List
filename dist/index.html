@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!--  <script src="main.js"></script> -->
+    <script src="main.js" defer></script>
     
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
@@ -15,22 +15,22 @@
         <div id="home">
             <p>Home</p>
             <ul>
-                <button class="clicked">
+                <button id="all-tasks">
                     <!-- <img src="1.jpg" alt=""> -->
                     All tasks
                 </button>
 
-                <button>
+                <button id="today">
                     <!-- <img src="2.jpg" alt=""> -->
                     Today
                 </button>
 
-                <button>
+                <button id="next-seven-days">
                     <!-- <img src="3.jpg" alt=""> -->
                     Next 7 days
                 </button>
 
-                <button>
+                <button id="important">
                     <!-- <img src="4.jpg" alt=""> -->
                     Important
                 </button>
@@ -38,12 +38,19 @@
         </div>
         <div id="projects">
             <p>Projects</p>
-            <ul>
-                <button>Todos</button>
-                <button>
+            <ul id="projects-list">
+                <button id="todos">Todos </button>
+                <button id="add-project">
                     <!-- <img src="a.jpg" alt=""> -->
                     Add Project
                 </button>
+                <div id="new-project" class="hidden">
+                    <img src="" alt="">
+                    <input type="text" id="input">
+                    <input type="button" value="Add" id="add">
+                    <input type="button" value="Cancel" id="cancel">
+
+                </div>
             </ul>
         </div>
     </div>
@@ -54,50 +61,6 @@
         Copyright Andre Espinoza
     </div>
 
-    <script defer>
-        
-        
-        const buttons = document.querySelectorAll("button");
-        console.log(buttons);
-
-        buttons.forEach(button => {
-        button.addEventListener('mouseover',  ()=> {
-            console.log(button.className);
-            if(button.className !=="clicked"){
-            button.setAttribute('class', 'hovered');
-            }
-        });
-
-        button.addEventListener('mouseout',  ()=> {
-            
-            if(button.className !=="clicked"){
-            button.removeAttribute('class');}
-
-        });
-
-        button.addEventListener('click',  ()=> {
-            
-            let previuslyClicked = document.querySelector(".clicked");
-            
-            if (previuslyClicked==null){}else{
-                previuslyClicked.removeAttribute('class');
-            }
-            
-            button.setAttribute('class', 'clicked');
-            
-            
-        });
-
-
-        });
-
-        /* function selectHomeItem(){
-
-        } */
-
-
-
-
-    </script>
+ 
 </body>
 </html>

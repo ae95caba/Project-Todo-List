@@ -79,3 +79,7 @@ li{
 .clicked{
     background-color: green !important;
 }
+
+.hidden{
+    display: none;
+}
